@@ -1,13 +1,27 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Game } from "./components";
+import styled from 'styled-components';
+
+const StyledApp = styled.div`
+  color: #222;
+  height: 100%;
+`;
+
+import { createGlobalStyle } from 'styled-components'
+
+const GlobalStyle = createGlobalStyle`
+  body, #root {
+    height: 100vh;
+  }
+`
 
 class App extends Component {
   render() {
     return (
-      <div>
-        
-      </div>
+      <StyledApp>
+        <GlobalStyle />
+        <Game />
+      </StyledApp>
     );
   }
 }
