@@ -9,5 +9,7 @@ export const StyledItemBoard = styled.div`
 `;
 
 export const BoardCell = styled.div`
+  width: 4em;
+  height: 4em;
   flex: 1 0 33.33%;
 `;

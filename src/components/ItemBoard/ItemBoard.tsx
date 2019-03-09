@@ -5,17 +5,21 @@ import { ItemCard } from '../ItemCard';
 
 export interface ItemBoardProps {
   items: Item[];
+  onClickItem?: (item: Item) => void;
 }
 
 export default class ItemBoard extends React.Component<ItemBoardProps> {
   public render() {
+    const { items, onClickItem } = this.props;
+
     return (
       <StyledItemBoard>
-        {this.props.items.map((item, index) => (
-          <BoardCell key={index}>
-            <ItemCard item={item} />
-          </BoardCell>
-        ))}
+        {items
+          .map(item => (
+            <BoardCell key={item.id}>
+              <ItemCard item={item} onClick={onClickItem} />
+            </BoardCell>
+          ))}
       </StyledItemBoard>
     );
   }
