@@ -1,23 +1,21 @@
 import React from 'react';
-import { ItemBoard, Scoreboard, Title } from "..";
-import { StyledGame, LargeSection, SmallSection } from './Game.style';
+import { ItemBoard, Title, Scoreboard } from "..";
+import { StyledGame, LargeSection, SmallSection, Flex } from './Game.style';
 import { Item } from '../../types';
-import { createItem, generateItems } from '../../helpers';
-
-export interface GameProps {
-  initialItems?: Item[];
-}
+import { generateItems } from '../../helpers';
 
 export interface GameState {
   items: Item[];
 }
 
-export default class Game extends React.Component<GameProps, GameState> {
-  public constructor(props: GameProps) {
+export default class Game extends React.Component<{}, GameState> {
+  static ItemAmount = 16;
+
+  public constructor(props: {}) {
     super(props);
 
     this.state = {
-      items: props.initialItems || []
+      items: generateItems(Game.ItemAmount)
     };
   }
 
@@ -35,7 +33,9 @@ export default class Game extends React.Component<GameProps, GameState> {
         </LargeSection>
         <SmallSection>
           <Title>Player items</Title>
-          <Scoreboard items={collected} onClickNewGame={this.startNewGame} />
+          <Flex>
+            <Scoreboard items={collected} onClickNewGame={this.startNewGame} />
+          </Flex>
         </SmallSection>
       </StyledGame>
     );
@@ -60,7 +60,7 @@ export default class Game extends React.Component<GameProps, GameState> {
 
   private startNewGame = () => {
     this.setState({
-      items: generateItems(9)
+      items: generateItems(Game.ItemAmount)
     });
   }
 }

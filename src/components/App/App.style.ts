@@ -9,13 +9,11 @@ export const GlobalStyle = createGlobalStyle`
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-  }
-  body, #root {
-    height: 100vh;
+    text-shadow: -0.1em 0.1em 0 rgba(0,0,0,0.2);
+    color: white;
   }
 `;
 
 export const StyledApp = styled.div`
-  color: #222;
   height: 100%;
 `;

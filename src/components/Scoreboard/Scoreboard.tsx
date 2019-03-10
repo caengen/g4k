@@ -3,7 +3,7 @@ import { ItemCard, ItemCardSize } from '..';
 import { groupBy, sumBy } from "lodash";
 import { Item, Dictionary, Score } from '../../types';
 import { calculateScore } from '../../helpers';
-import { Table, PointDisplay, Row } from './Scoreboard.style';
+import { Table, Thead, Tbody, Tr, Th, Bonus, Total, Row, StyledScoreboard, NewGameButton } from './Scoreboard.style';
 
 export interface ScoreboardProps {
   items: Item[];
@@ -21,43 +21,48 @@ export default class Scoreboard extends React.Component<ScoreboardProps> {
     });
 
     return (
-      <div>
+      <StyledScoreboard>
         <Table>
-          <thead>
-            <tr>
-              <th>Item</th>
-              <th>Qty</th>
-              <th>Score</th>
-            </tr>
-          </thead>
-          <tbody>
+          <Thead>
+            <Tr>
+              <Th>Item</Th>
+              <Th>Qty</Th>
+              <Th>Score</Th>
+            </Tr>
+          </Thead>
+          <Tbody>
             {Object.keys(groups).map(key => this.renderRow(groups[key], scores[key]))}
-          </tbody>
+          </Tbody>
         </Table>
-        <PointDisplay>
+        <Bonus>
           Bonus {sumBy(Object.values(scores), score => score.bonus)}
-        </PointDisplay>
+        </Bonus>
         <Row>
-          <PointDisplay>
-            Total {sumBy(Object.values(scores), score => score.totalUnitPoints + score.bonus)}
-          </PointDisplay>
-          <button onClick={onClickNewGame}>
-            New game
-          </button>
+          <Total>
+            <span>Total</span>
+            <span>
+              {sumBy(Object.values(scores), score => score.totalUnitPoints + score.bonus)}
+            </span>
+          </Total>
+          <NewGameButton onClick={onClickNewGame}>
+            <strong>
+              New game
+            </strong>  
+          </NewGameButton>
         </Row>
-      </div>
+      </StyledScoreboard>
     );
   }
 
   private renderRow = (items: Item[], score: Score) => {
     return (
-      <tr key={items[0].name}>
-        <th>
+      <Tr key={items[0].name}>
+        <Th>
           <ItemCard size={ItemCardSize.small} item={items[0]} />
-        </th>
-        <th>{items.length}</th>
-        <th>{score.bonus + score.totalUnitPoints}</th>
-      </tr>
+        </Th>
+        <Th>{items.length}</Th>
+        <Th>{score.bonus + score.totalUnitPoints}</Th>
+      </Tr>
     );
   }
 }

@@ -19,8 +19,8 @@ export const StyledItemCard = styled.div<StyledItemCardProps>`
   display: flex;
   justify-content: center;
   padding: 1em;
-  background-color: blue;
-  color: white;
+  background-color: #801515;
+  color: #FFAAAA;
   margin: .5em;
   cursor: pointer;
   ${p => sizeStyling(p.size)}
