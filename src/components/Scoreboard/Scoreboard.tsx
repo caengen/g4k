@@ -1,22 +1,13 @@
-import * as React from 'react';
-import { Item } from '../../types/Item';
-import { ItemCard, ItemCardSize } from '../ItemCard';
-import { groupBy } from "lodash";
+import React from 'react';
+import { ItemCard, ItemCardSize } from '..';
+import { groupBy, sumBy } from "lodash";
+import { Item, Dictionary, Score } from '../../types';
+import { calculateScore } from '../../helpers';
 import { Table, PointDisplay, Row } from './Scoreboard.style';
-import { sumBy } from "lodash";
 
 export interface ScoreboardProps {
   items: Item[];
   onClickNewGame?: () => void;
-}
-
-export interface Score {
-  totalUnitPoints: number;
-  bonus: number;
-}
-
-export interface ScoreDictionary {
-  [key: string]: Score;
 }
 
 export default class Scoreboard extends React.Component<ScoreboardProps> {
@@ -24,9 +15,9 @@ export default class Scoreboard extends React.Component<ScoreboardProps> {
     const { items, onClickNewGame } = this.props;
     const groups = groupBy(items, "name");
  
-    const scores: ScoreDictionary = {}; 
+    const scores: Dictionary<Score> = {}; 
     Object.keys(groups).forEach(key => {
-      scores[key] = this.calculateScore(groups[key]);
+      scores[key] = calculateScore(groups[key]);
     });
 
     return (
@@ -60,7 +51,7 @@ export default class Scoreboard extends React.Component<ScoreboardProps> {
 
   private renderRow = (items: Item[], score: Score) => {
     return (
-      <tr>
+      <tr key={items[0].name}>
         <th>
           <ItemCard size={ItemCardSize.small} item={items[0]} />
         </th>
@@ -68,21 +59,5 @@ export default class Scoreboard extends React.Component<ScoreboardProps> {
         <th>{score.bonus + score.totalUnitPoints}</th>
       </tr>
     );
-  }
-
-  private calculateScore = (items: Item[]): Score => {
-    const name = items[0].name;
-
-    let bonus = 0;
-    if (name === "A") {
-      bonus = Math.floor(items.length / 3) * 50;
-    } else if (name === "B") {
-      bonus = Math.floor(items.length / 2) * 30;
-    }
-    
-    return {
-      bonus,
-      totalUnitPoints: sumBy(items, item => item.value)
-    };
   }
 }

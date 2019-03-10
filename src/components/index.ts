@@ -1,3 +1,4 @@
+export * from "./App";
 export * from "./Game";
 export * from "./Scoreboard";
 export * from "./Title";

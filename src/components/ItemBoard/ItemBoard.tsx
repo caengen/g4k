@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { Item } from '../../types/Item';
-import { StyledItemBoard, BoardCell } from './ItemBoard.style';
+import React from 'react';
+import { Item } from '../../types';
+import { StyledItemBoard } from './ItemBoard.style';
 import { ItemCard } from '../ItemCard';
 
 export interface ItemBoardProps {
@@ -16,9 +16,7 @@ export default class ItemBoard extends React.Component<ItemBoardProps> {
       <StyledItemBoard>
         {items
           .map(item => (
-            <BoardCell key={item.id}>
-              <ItemCard item={item} onClick={onClickItem} />
-            </BoardCell>
+            <ItemCard key={item.id} item={item} onClick={onClickItem} />
           ))}
       </StyledItemBoard>
     );

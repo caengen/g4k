@@ -11,15 +11,17 @@ const sizeStyling = (size?: ItemCardSize) => {
       return css`font-size: 1em;`;
     case ItemCardSize.large:
     default:
-      return css`font-size: 3em;`;
+      return css`font-size: 2.5em;`;
   }
 }
 
 export const StyledItemCard = styled.div<StyledItemCardProps>`
+  display: flex;
+  justify-content: center;
   padding: 1em;
-  ${p => sizeStyling(p.size)}
   background-color: blue;
   color: white;
   margin: .5em;
   cursor: pointer;
+  ${p => sizeStyling(p.size)}
 `;

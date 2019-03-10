@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Item } from '../../types/Item';
+import { Item } from '../../types';
 import { StyledItemCard } from './ItemCard.style';
 import { ItemCardSize } from './ItemCard.types';
 

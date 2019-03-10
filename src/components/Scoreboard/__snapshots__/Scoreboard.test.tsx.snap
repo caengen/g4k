@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <styled.table>
+    <thead>
+      <tr>
+        <th>
+          Item
+        </th>
+        <th>
+          Qty
+        </th>
+        <th>
+          Score
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        key="A"
+      >
+        <th>
+          <ItemCard
+            item={
+              Object {
+                "id": "1",
+                "name": "A",
+                "value": 50,
+              }
+            }
+            size={0}
+          />
+        </th>
+        <th>
+          3
+        </th>
+        <th>
+          200
+        </th>
+      </tr>
+      <tr
+        key="B"
+      >
+        <th>
+          <ItemCard
+            item={
+              Object {
+                "id": "2",
+                "name": "B",
+                "value": 30,
+              }
+            }
+            size={0}
+          />
+        </th>
+        <th>
+          2
+        </th>
+        <th>
+          90
+        </th>
+      </tr>
+      <tr
+        key="C"
+      >
+        <th>
+          <ItemCard
+            item={
+              Object {
+                "id": "3",
+                "name": "C",
+                "value": 20,
+              }
+            }
+            size={0}
+          />
+        </th>
+        <th>
+          3
+        </th>
+        <th>
+          60
+        </th>
+      </tr>
+      <tr
+        key="D"
+      >
+        <th>
+          <ItemCard
+            item={
+              Object {
+                "id": "4",
+                "name": "D",
+                "value": 15,
+              }
+            }
+            size={0}
+          />
+        </th>
+        <th>
+          3
+        </th>
+        <th>
+          45
+        </th>
+      </tr>
+    </tbody>
+  </styled.table>
+  <styled.div>
+    Bonus 
+    80
+  </styled.div>
+  <styled.div>
+    <styled.div>
+      Total 
+      395
+    </styled.div>
+    <button>
+      New game
+    </button>
+  </styled.div>
+</div>
+`;

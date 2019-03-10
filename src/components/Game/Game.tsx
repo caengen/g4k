@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ItemBoard, Scoreboard, Title } from "..";
 import { StyledGame, LargeSection, SmallSection } from './Game.style';
-import { Item } from '../../types/Item';
-import createItem from '../../createItem/createItem';
+import { Item } from '../../types';
+import { createItem, generateItems } from '../../helpers';
 
 export interface GameProps {
   initialItems?: Item[];
@@ -60,36 +60,7 @@ export default class Game extends React.Component<GameProps, GameState> {
 
   private startNewGame = () => {
     this.setState({
-      items: this.generateItems(9)
+      items: generateItems(9)
     });
-  }
-
-  private generateItems = (amount: number): Item[] => {
-    const types = [
-      {
-        name: "A",
-        value: 50
-      },
-      {
-        name: "B",
-        value: 30
-      },
-      {
-        name: "C",
-        value: 20
-      },
-      {
-        name: "D",
-        value: 15
-      }
-    ];
-
-    const items = [];
-    for (let i = 0; i < amount; i++) {
-      const randType = types[Math.floor(Math.random() * types.length)];
-      items.push(createItem(randType))
-    }
-
-    return items;
   }
 }

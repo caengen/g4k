@@ -1,5 +1,5 @@
 import uuidv4 from "uuid";
-import { Item } from "../types/Item";
+import { Item } from "../../types";
 
 interface CreateItemParams {
   name: string;

@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<styled.div>
+  <styled.section>
+    <styled.h1>
+      Kahoot! Points
+    </styled.h1>
+    <ItemBoard
+      items={Array []}
+      onClickItem={[Function]}
+    />
+  </styled.section>
+  <styled.section>
+    <styled.h1>
+      Player items
+    </styled.h1>
+    <Scoreboard
+      items={Array []}
+      onClickNewGame={[Function]}
+    />
+  </styled.section>
+</styled.div>
+`;
