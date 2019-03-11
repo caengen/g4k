@@ -1,26 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<div>
+<styled.div>
   <styled.table>
-    <thead>
-      <tr>
-        <th>
+    <styled.thead>
+      <styled.tr>
+        <styled.th>
           Item
-        </th>
-        <th>
+        </styled.th>
+        <styled.th>
           Qty
-        </th>
-        <th>
+        </styled.th>
+        <styled.th>
           Score
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr
+        </styled.th>
+      </styled.tr>
+    </styled.thead>
+    <styled.tbody>
+      <styled.tr
         key="A"
       >
-        <th>
+        <styled.th>
           <ItemCard
             item={
               Object {
@@ -31,18 +31,18 @@ exports[`renders correctly 1`] = `
             }
             size={0}
           />
-        </th>
-        <th>
+        </styled.th>
+        <styled.th>
           3
-        </th>
-        <th>
+        </styled.th>
+        <styled.th>
           200
-        </th>
-      </tr>
-      <tr
+        </styled.th>
+      </styled.tr>
+      <styled.tr
         key="B"
       >
-        <th>
+        <styled.th>
           <ItemCard
             item={
               Object {
@@ -53,18 +53,18 @@ exports[`renders correctly 1`] = `
             }
             size={0}
           />
-        </th>
-        <th>
+        </styled.th>
+        <styled.th>
           2
-        </th>
-        <th>
+        </styled.th>
+        <styled.th>
           90
-        </th>
-      </tr>
-      <tr
+        </styled.th>
+      </styled.tr>
+      <styled.tr
         key="C"
       >
-        <th>
+        <styled.th>
           <ItemCard
             item={
               Object {
@@ -75,18 +75,18 @@ exports[`renders correctly 1`] = `
             }
             size={0}
           />
-        </th>
-        <th>
+        </styled.th>
+        <styled.th>
           3
-        </th>
-        <th>
+        </styled.th>
+        <styled.th>
           60
-        </th>
-      </tr>
-      <tr
+        </styled.th>
+      </styled.tr>
+      <styled.tr
         key="D"
       >
-        <th>
+        <styled.th>
           <ItemCard
             item={
               Object {
@@ -97,15 +97,15 @@ exports[`renders correctly 1`] = `
             }
             size={0}
           />
-        </th>
-        <th>
+        </styled.th>
+        <styled.th>
           3
-        </th>
-        <th>
+        </styled.th>
+        <styled.th>
           45
-        </th>
-      </tr>
-    </tbody>
+        </styled.th>
+      </styled.tr>
+    </styled.tbody>
   </styled.table>
   <styled.div>
     Bonus 
@@ -113,12 +113,18 @@ exports[`renders correctly 1`] = `
   </styled.div>
   <styled.div>
     <styled.div>
-      Total 
-      395
+      <span>
+        Total
+      </span>
+      <span>
+        395
+      </span>
     </styled.div>
-    <button>
-      New game
-    </button>
+    <styled.button>
+      <strong>
+        New game
+      </strong>
+    </styled.button>
   </styled.div>
-</div>
+</styled.div>
 `;

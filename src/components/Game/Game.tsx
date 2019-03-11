@@ -4,18 +4,22 @@ import { StyledGame, LargeSection, SmallSection, Flex } from './Game.style';
 import { Item } from '../../types';
 import { generateItems } from '../../helpers';
 
+export interface GameProps {
+  initialItems?: Item[];
+}
+
 export interface GameState {
   items: Item[];
 }
 
-export default class Game extends React.Component<{}, GameState> {
+export default class Game extends React.Component<GameProps, GameState> {
   static ItemAmount = 16;
 
-  public constructor(props: {}) {
+  public constructor(props: GameProps) {
     super(props);
 
     this.state = {
-      items: generateItems(Game.ItemAmount)
+      items: props.initialItems || generateItems(Game.ItemAmount)
     };
   }
 
@@ -41,7 +45,7 @@ export default class Game extends React.Component<{}, GameState> {
     );
   }
 
-  private collectItem = (item: Item) => {
+  public collectItem = (item: Item) => {
     const { items } = this.state;
 
     const index = items.findIndex(currItem => currItem.id === item.id);
@@ -58,7 +62,7 @@ export default class Game extends React.Component<{}, GameState> {
     });
   }
 
-  private startNewGame = () => {
+  public startNewGame = () => {
     this.setState({
       items: generateItems(Game.ItemAmount)
     });

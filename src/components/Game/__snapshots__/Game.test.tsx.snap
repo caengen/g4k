@@ -7,7 +7,65 @@ exports[`renders correctly 1`] = `
       Kahoot! Points
     </styled.h1>
     <ItemBoard
-      items={Array []}
+      items={
+        Array [
+          Object {
+            "id": "1",
+            "name": "A",
+            "value": 50,
+          },
+          Object {
+            "id": "1a",
+            "name": "A",
+            "value": 50,
+          },
+          Object {
+            "id": "1b",
+            "name": "A",
+            "value": 50,
+          },
+          Object {
+            "id": "2",
+            "name": "B",
+            "value": 30,
+          },
+          Object {
+            "id": "2a",
+            "name": "B",
+            "value": 30,
+          },
+          Object {
+            "id": "3",
+            "name": "C",
+            "value": 20,
+          },
+          Object {
+            "id": "3a",
+            "name": "C",
+            "value": 20,
+          },
+          Object {
+            "id": "3b",
+            "name": "C",
+            "value": 20,
+          },
+          Object {
+            "id": "4",
+            "name": "D",
+            "value": 15,
+          },
+          Object {
+            "id": "4a",
+            "name": "D",
+            "value": 15,
+          },
+          Object {
+            "id": "4b",
+            "name": "D",
+            "value": 15,
+          },
+        ]
+      }
       onClickItem={[Function]}
     />
   </styled.section>
@@ -15,10 +73,12 @@ exports[`renders correctly 1`] = `
     <styled.h1>
       Player items
     </styled.h1>
-    <Scoreboard
-      items={Array []}
-      onClickNewGame={[Function]}
-    />
+    <styled.div>
+      <Scoreboard
+        items={Array []}
+        onClickNewGame={[Function]}
+      />
+    </styled.div>
   </styled.section>
 </styled.div>
 `;

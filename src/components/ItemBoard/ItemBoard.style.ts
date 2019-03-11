@@ -1,10 +1,9 @@
 import styled from "styled-components";
 
 export const StyledItemBoard = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: min-content;
   overflow-y: scroll;
   height: 500px;
 `;
